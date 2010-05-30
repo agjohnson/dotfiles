@@ -1,0 +1,10 @@
+syntax on
+set autoindent
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set bs=2
+set nocp
+color ohess
+set indentkeys=
