@@ -1,5 +1,5 @@
 
-.PHONY: csh vim
+.PHONY: csh vim tmux
 
 build: csh
 
@@ -11,4 +11,6 @@ vim:
 	-mkdir -p ~/.vim/colors
 	cp vim/colors/* ~/.vim/colors/
 
+tmux:
+	cp tmux.conf ~/.tmux.conf
 
