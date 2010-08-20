@@ -25,7 +25,6 @@ setenv EDITOR vim
 setenv VISUAL ${EDITOR}
 setenv EXINIT 'set autoindent'
 setenv PAGER less
-setenv EMAIL "anthony@dcoding.com"
 if ($is_netbsd) setenv PKG_PATH "ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/5.0.1_2010Q1/All"
 
 # Path
