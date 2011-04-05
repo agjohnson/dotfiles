@@ -1,10 +1,22 @@
-syntax on
 set autoindent
 set nowrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set bs=2
 set nocp
-color ohess
 set indentkeys=
+
+map [7~ <Home>
+map [8~ <End>
+imap [7~ <Home>
+imap [8~ <End>
+
+syntax on
+color ohess
+
+autocmd FileType make set noexpandtab
+autocmd FileType htmldjango,html,xhtml set tabstop=2
+autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 
+autocmd BufEnter,BufNew *.txtl set syntax=textile tabstop=2 
+

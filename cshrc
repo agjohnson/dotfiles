@@ -43,6 +43,12 @@ if ($?prompt) then
   bindkey "^W" backward-delete-word
   bindkey -k up history-search-backward
   bindkey -k down history-search-forward
+  bindkey "\e[1~" beginning-of-line  # Home
+  bindkey "\e[7~" beginning-of-line  # Home rxvt
+  bindkey "\e[2~" overwrite-mode     # Ins
+  bindkey "\e[3~" delete-char        # Delete
+  bindkey "\e[4~" end-of-line        # End
+  bindkey "\e[8~" end-of-line        # End rxvt
   
   # Pretty prompt
   set c1 = "%{\033[1;33m%}"

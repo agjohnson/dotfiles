@@ -1,16 +1,13 @@
 
-.PHONY: csh vim tmux
+BOOTSTRAP=bootstrap
 
-build: csh
+build: $(BOOTSTRAP)
 
-csh:
-	cp cshrc ~/.cshrc
+clean:
+	rm $(BOOTSTRAP)
 
-vim: 
-	cp vimrc ~/.vimrc
-	-mkdir -p ~/.vim/colors
-	cp vim/colors/* ~/.vim/colors/
-
-tmux:
-	cp tmux.conf ~/.tmux.conf
+$(BOOTSTRAP):
+	head -n 4 bootstrap-template >> $@
+	hg archive -t tgz -p .dotfiles - | base64 >> $@	
+	tail -n +5 bootstrap-template >> $@
 
