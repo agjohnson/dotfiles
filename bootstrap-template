@@ -4,12 +4,10 @@
 ( base64 -d | tar zxf - ) << EOF
 EOF
 
-# Exit on bad return
-[ $? ] || echo "Error extracting archive"; exit 1
-
 path=".dotfiles"
 
 install_part () {
+    echo "Installing $1"
     case "$1" in
         vim)
             cp -v $path/vimrc ~/.vimrc
@@ -24,16 +22,18 @@ install_part () {
 # Decide what to install
 case "$1" in
     server)
-        install_part("vim")
-        install_part("cshrc")
+        install_part "vim"
+        install_part "cshrc"
         ;;
     desktop)
-        install_part("vim")
-        install_part("cshrc")
+        install_part "vim"
+        install_part "cshrc"
         ;;
     *)
-        echo "Usage: bootstrap [mode]"
-        echo "Modes: server, desktop"
+        echo "Usage: bootstrap {server|desktop}"
         exit 1
         ;;
 esac
+
+# Drop path
+rm -vrf $path
