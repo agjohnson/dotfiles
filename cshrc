@@ -55,12 +55,20 @@ if ($?prompt) then
   set c2 = "%{\033[1;30m%}"
   set c0 = "%{\033[0m%}"
   set title = "%{\033]0;%m:%~\007%}"
+  
+  # Private warning for prompt
+  set private = ""
+  ssh-add -l >& /dev/null
+  if ($? < 2) then
+    set private = "%{\033[42m%}%{\033[30m%} PRIV ${c0} "
+  endif
+
   switch ($TERM)
     case "xterm*":
-      set prompt = "${title}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "${title}${private}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
-      set prompt = "${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "${private}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
   endsw
 endif
