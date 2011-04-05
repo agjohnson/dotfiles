@@ -1,0 +1,31 @@
+#!/bin/sh
+
+install_part () {
+    echo "Installing $1"
+    case "$1" in
+        vim)
+            cp -v vimrc ~/.vimrc
+            cp -v -a vim ~/.vim
+            ;;
+        cshrc)
+            cp -v cshrc ~/.cshrc
+            ;;
+    esac
+}
+
+# Decide what to install
+case "$1" in
+    server)
+        install_part "vim"
+        install_part "cshrc"
+        ;;
+    desktop)
+        install_part "vim"
+        install_part "cshrc"
+        ;;
+    *)
+        echo "Usage: install {server|desktop}"
+        exit 1
+        ;;
+esac
+

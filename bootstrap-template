@@ -4,36 +4,11 @@
 ( base64 -d | tar zxf - ) << EOF
 EOF
 
-path=".dotfiles"
+if [ -d .dotfiles ]; then
+    .dotfiles/install $1
+    rm -rvf .dotfiles
+else
+    echo "Error installing"
+    exit 1
+fi
 
-install_part () {
-    echo "Installing $1"
-    case "$1" in
-        vim)
-            cp -v $path/vimrc ~/.vimrc
-            cp -v -a $path/vim ~/.vim
-            ;;
-        cshrc)
-            cp -v $path/cshrc ~/.cshrc
-            ;;
-    esac
-}
-
-# Decide what to install
-case "$1" in
-    server)
-        install_part "vim"
-        install_part "cshrc"
-        ;;
-    desktop)
-        install_part "vim"
-        install_part "cshrc"
-        ;;
-    *)
-        echo "Usage: bootstrap {server|desktop}"
-        exit 1
-        ;;
-esac
-
-# Drop path
-rm -vrf $path
