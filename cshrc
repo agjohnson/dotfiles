@@ -56,19 +56,41 @@ if ($?prompt) then
   set c0 = "%{\033[0m%}"
   set title = "%{\033]0;%m:%~\007%}"
   
-  # Private warning for prompt
-  set private = ""
+  # Warnings
+  # Private (ssh-agent) warning
   ssh-add -l >& /dev/null
   if ($? < 2) then
-    set private = "%{\033[42m%}%{\033[30m%} PRIV ${c0} "
+    set warn_priv = " P "
   endif
+  # SSH warning
+  if ($?SSH_CONNECTION) then
+    switch ("$SSH_CONNECTION")
+      case "* 192.168.0.*":
+        set warn_ssh = " a "
+        breaksw
+      case "* 192.168.2.*":
+        set warn_ssh = " e "
+        breaksw
+      case "* 10.27.?.*":
+        set warn_ssh = " o "
+        breaksw
+    endsw
+  endif
+  set warn = ""
+  if ($?warn_priv) then
+    set warn = "%{\033[42m%}%{\033[30m%}${warn_priv}${c0} ${warn}"
+  endif
+  if ($?warn_ssh) then
+    set warn = "%{\033[41m%}${warn_ssh}${c0} ${warn}"
+  endif
+
 
   switch ($TERM)
     case "xterm*":
-      set prompt = "${title}${private}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "${title}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
-      set prompt = "${private}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
   endsw
 endif
