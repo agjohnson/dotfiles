@@ -1,0 +1,138 @@
+Xcursor.theme: Vanilla-DMZ-AA
+
+XTerm*faceName:    DejaVu Sans Mono:style=Book
+XTerm*faceSize:    10
+XTerm*termName:    xterm-color
+XTerm*boldMode:    false
+
+XTerm*background:  #332f2c
+XTerm*foreground:  #e5e5e5
+
+!Black
+XTerm*color0:      #4d4843
+XTerm*color8:      #777069
+!Red
+XTerm*color1:      #e10e36
+XTerm*color9:      #fb365b
+!Green
+XTerm*color2:      #c7cd22
+XTerm*color10:     #dfe544
+!Yellow
+XTerm*color3:      #f4a919
+XTerm*color11:     #f6ba47
+!Blue
+XTerm*color4:      #14abbd
+XTerm*color12:     #32d4e7
+!Magenta
+XTerm*color5:      #3079c4
+XTerm*color13:     #4294e7
+!Cyan
+XTerm*color6:      #819eb7
+XTerm*color14:     #bbd0e1
+!White
+XTerm*color7:      whitesmoke
+XTerm*color15:     ghostwhite
+
+
+
+! Urxvt class
+URxvt.font: xft:DejaVu Sans Mono-8:style=Book
+URxvt*fading: 50
+URxvt*scrollBar: true
+URxvt*scrollstyle: plain
+URxvt*scrollBar_floating: true
+URxvt*scrollBar_right: true
+URxvt*scrollColor: #202020
+URxvt*termName: xterm
+URxvt*urllauncher: /usr/bin/chromium 
+URxvt*matcher.button: 3
+URxvt*saveLines: 8192
+URxvt*internalBorder: 20
+
+! default colors
+URxvt*background: grey10
+URxvt*foreground: ghostwhite
+URxvt*color0: #4d4843
+URxvt*color8: #777069
+URxvt*color1: #e10e36
+URxvt*color9: #fb365b
+URxvt*color2: #c7cd22
+URxvt*color10: #dfe544
+URxvt*color3: #f4a919
+URxvt*color11: #f6ba47
+URxvt*color4: #14abbd
+URxvt*color12: #32d4e7
+URxvt*color5: #3079c4
+URxvt*color13: #4294e7
+URxvt*color6: #819eb7
+URxvt*color14: #bbd0e1
+URxvt*color7: whitesmoke
+URxvt*color15: ghostwhite
+
+! Urxvt Scheme - coding
+!coding*font:                xft:Inconsolata-12:style=Normal
+!coding*font:                xft:Droid Sans Mono-10:style=Regular
+coding*font:                xft:Inconsolata-10.5:style=Normal
+coding*background:  grey10
+coding*foreground:  #DED6CA
+coding*color0:      #4d4843
+coding*color8:      #5C5245
+coding*color1:      #76AEED
+coding*color9:      #75B6FF
+coding*color2:      #FFC469
+coding*color10:     #FFD28D
+coding*color3:      #E2E7F3
+coding*color11:     #EBEFF9
+coding*color4:      #CEA2EF
+coding*color12:     #D6B6EF
+coding*color5:      #B0D6FF
+coding*color13:     #D0F6FF
+coding*color6:      #FFD28D
+coding*color14:     #FFDDAA
+coding*color7:      #D1C8BC
+coding*color15:     #DED6CA
+
+! urxvt - writing
+writing*font: xft:Droid Sans Mono-12:
+writing*background: #fffaf5
+writing*foreground: #202000
+writing*color0: #303010
+writing*color1: #e10e36
+writing*color2: #404020
+writing*color3: #505030
+writing*color4: #606040
+writing*color5: #707050
+writing*color6: #808060
+writing*color7: #909070
+writing*color8: #303010
+writing*color9: #fb365b
+writing*color10: #404020
+writing*color11: #505030
+writing*color12: #606040
+writing*color13: #707050
+writing*color14: #808060
+writing*color15: #909070
+
+! Urxvt Scheme - hotspot
+hotspot*font:                xft:Inconsolata-11:style=Normal
+!hotspot*font:                xft:Droid Sans Mono-10:style=Regular
+hotspot*background:  grey10
+hotspot*foreground:  #DED6CA
+hotspot*color0:      #4d4843
+hotspot*color8:      #5C5245
+hotspot*color1:      #76AEED
+hotspot*color9:      #75B6FF
+hotspot*color2:      #FFC469
+hotspot*color10:     #FFD28D
+hotspot*color3:      #E2E7F3
+hotspot*color11:     #EBEFF9
+hotspot*color4:      #CEA2EF
+hotspot*color12:     #D6B6EF
+hotspot*color5:      #B0D6FF
+hotspot*color13:     #D0F6FF
+hotspot*color6:      #FFD28D
+hotspot*color14:     #FFDDAA
+hotspot*color7:      #D1C8BC
+hotspot*color15:     #DED6CA
+
+

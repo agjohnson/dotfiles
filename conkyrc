@@ -1,0 +1,19 @@
+background no
+out_to_console no 
+update_interval 2.0
+total_run_times 0
+use_spacer none
+color1 FAFAFA
+color2 888877
+default_color white 
+default_shade_color black
+use_xft yes
+xftfont Droid Sans Mono:size=9
+double_buffer yes
+on_bottom yes
+gap_x 10
+gap_y 10
+
+TEXT
+${color1}${time %a %b %d %I:%M%P %Z} <${tztime US/Eastern %I:%M%P %Z}> ${color2}load:${color1} ${loadavg 1 2 3} ${color2}free:${color1} ${memfree} ${color2}net:${color1} ${downspeed}/${upspeed} ${color2}battery${color1} ${battery BAT1} 
+

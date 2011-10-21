@@ -1,25 +1,28 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#cccccc";
-static const char normfgcolor[]     = "#000000";
-static const char selbordercolor[]  = "#0066ff";
-static const char selbgcolor[]      = "#0066ff";
-static const char selfgcolor[]      = "#ffffff";
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const char font[]            = "Droid Sans Mono 10";
+static const char normbordercolor[] = "#262729";
+static const char normbgcolor[]     = "#111111";
+static const char normfgcolor[]     = "#888877";
+static const char selbordercolor[]  = "#AB1031";
+static const char selbgcolor[]      = "#111111";
+static const char selfgcolor[]      = "#FAFAFA";
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "comm", "web", "a", "b", "c", "etc" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "Virt-manager", NULL,   NULL,       0,            True,        -1 },
+    { "Chrome",   NULL,       NULL,       1 << 1,       False,       -1 },
+    { "Claws-mail", NULL,     NULL,       0,            True,        -1 }
 };
 
 /* layout(s) */
@@ -28,13 +31,13 @@ static const Bool resizehints = True; /* True means respect size hints in tiled 
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "#",      tile },    /* first entry is default */
+	{ "^",      NULL },    /* no layout function means floating behavior */
+	{ "@",      monocle },
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -46,7 +49,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "uxterm", NULL };
+static const char *termcmd[]  = { "urxvt",  "-name", "coding", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

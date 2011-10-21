@@ -10,6 +10,12 @@ install_part () {
         cshrc)
             cp -v cshrc ~/.cshrc
             ;;
+        x)
+            cp -v Xdefaults ~/.Xdefaults
+            ;;
+        tmux)
+            cp -v tmux.conf ~/.tmux.conf
+            ;;
     esac
 }
 
@@ -22,6 +28,8 @@ case "$1" in
     desktop)
         install_part "vim"
         install_part "cshrc"
+        install_part "x"
+        install_part "tmux"
         ;;
     *)
         echo "Usage: install {server|desktop}"

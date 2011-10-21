@@ -17,6 +17,6 @@ color ohess
 
 autocmd FileType make set noexpandtab
 autocmd FileType htmldjango,html,xhtml set tabstop=2
-autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 
-autocmd BufEnter,BufNew *.txtl set syntax=textile tabstop=2 
-
+autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 spell spelllang=en 
+autocmd BufEnter,BufNew *.txtl set syntax=textile tabstop=2 spell spelllang=en
+autocmd BufEnter,BufNew *.yaml set tabstop=2
