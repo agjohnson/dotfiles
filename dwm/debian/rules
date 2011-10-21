@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+SHELL := sh -e
+
+%:
+	dh ${@} --with quilt
+
+override_dh_auto_clean:
+	rm -f debian/dwm.postinst debian/dwm.prerm
+	-mv config.default.h config.h
+
+	dh_auto_clean
+
+override_dh_auto_build:
+	CFLAGS="$(CFLAGS)" $(MAKE) PREFIX=/usr
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/dwm PREFIX=/usr
+
+	mv debian/dwm/usr/bin/dwm debian/dwm/usr/bin/dwm.default
+	ln -s dwm.1.gz debian/dwm/usr/share/man/man1/dwm.default.1.gz
+
+	# Building alternatives
+	cp config.h config.default.h
+
+	for ALTERNATIVE in debian/local/config.*; \
+	do \
+		$(MAKE) clean; \
+		cp $${ALTERNATIVE} config.h; \
+		CFLAGS="$(CFLAGS)" $(MAKE) PREFIX=/usr; \
+		install -m 0755 dwm debian/dwm/usr/bin/dwm.`basename $${ALTERNATIVE} | sed -e 's|config.||' -e 's|.h||'`; \
+		ln -s dwm.1.gz debian/dwm/usr/share/man/man1/dwm.`basename $${ALTERNATIVE} | sed -e 's|config.||' -e 's|.h||'`.1.gz; \
+	done
+
+	# Configuring maintainer scripts
+	sed -e 's|@ALTERNATIVES@|web|' debian/dwm.postinst.in > debian/dwm.postinst
+	sed -e 's|@ALTERNATIVES@|web|' debian/dwm.prerm.in > debian/dwm.prerm
+
+	# Installing icon file
+	install -d -m 0755 debian/dwm/usr/share/icons
+	uudecode debian/icons/dwm.png.uu -o debian/dwm/usr/share/icons/dwm.png
