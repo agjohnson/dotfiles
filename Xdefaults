@@ -1,5 +1,13 @@
 Xcursor.theme: Vanilla-DMZ-AA
 
+XNews*faceName:    FreeMono:style=Oblique
+XNews*faceSize:    13
+XNews*termName:    xterm
+XNews*boldMode:    true
+XNews*background:  #f9f9f9
+XNews*foreground:  #333333
+XNews*colorMode:   off
+
 XTerm*faceName:    DejaVu Sans Mono:style=Book
 XTerm*faceSize:    10
 XTerm*termName:    xterm-color
@@ -48,6 +56,7 @@ URxvt*urllauncher: /usr/bin/chromium
 URxvt*matcher.button: 3
 URxvt*saveLines: 8192
 URxvt*internalBorder: 20
+URxvt*urgentOnBell: true
 
 ! default colors
 URxvt*background: grey10
@@ -70,9 +79,7 @@ URxvt*color7: whitesmoke
 URxvt*color15: ghostwhite
 
 ! Urxvt Scheme - coding
-!coding*font:                xft:Inconsolata-12:style=Normal
-!coding*font:                xft:Droid Sans Mono-10:style=Regular
-coding*font:                xft:Inconsolata-10.5:style=Normal
+coding*font:        xft:Inconsolata-10.5:style=Normal
 coding*background:  grey10
 coding*foreground:  #DED6CA
 coding*color0:      #4d4843
