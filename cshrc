@@ -37,7 +37,7 @@ if ($?prompt) then
   set filec
   set history = 1000
   set mail = (/var/mail/$USER)
-  #set mch = `hostname -s`
+  set mch = `hostname -s`
   set autologout = 60
   set autolist
   bindkey "^W" backward-delete-word
@@ -87,10 +87,10 @@ if ($?prompt) then
 
   switch ($TERM)
     case "xterm*":
-      set prompt = "${title}${warn}${c2}%T %~${c0} ${c1}%#${c0} "
+      set prompt = "${title}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
-      set prompt = "${warn}${c2}%T %~${c0} ${c1}%#${c0} "
+      set prompt = "${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
   endsw
 endif
