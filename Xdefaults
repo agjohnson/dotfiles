@@ -82,4 +82,25 @@ coding*color14: #FFDDAA
 coding*color7: #D1C8BC
 coding*color15: #DED6CA
 
+! Urxvt Scheme - tiny
+tiny*font: xft:DejaVu Sans Mono-8:style=Book
+tiny*background: grey10
+tiny*foreground: #DED6CA
+tiny*color0: #4d4843
+tiny*color8: #5C5245
+tiny*color1: #76AEED
+tiny*color9: #75B6FF
+tiny*color2: #FFC469
+tiny*color10: #FFD28D
+tiny*color3: #E2E7F3
+tiny*color11: #EBEFF9
+tiny*color4: #CEA2EF
+tiny*color12: #D6B6EF
+tiny*color5: #B0D6FF
+tiny*color13: #D0F6FF
+tiny*color6: #FFD28D
+tiny*color14: #FFDDAA
+tiny*color7: #D1C8BC
+tiny*color15: #DED6CA
+p
 

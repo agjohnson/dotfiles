@@ -26,10 +26,11 @@ colorNormalBorder   = "#4d4843"
 colorFocusedBorder  = "#FFC469"
 
 -- Layout
-wmLayout = layoutHints (wmLayoutTall ||| wmLayoutWide ||| Full) 
+wmLayout = layoutHints (wmLayoutTall ||| wmLayoutWide ||| Full ||| wmLayoutTiny) 
 
 wmLayoutTall = named "Tall" (Tall 1 (3/100) (6/10))
 wmLayoutWide = named "Wide" (Mirror $ Tall 1 (3/100) (7/10))
+wmLayoutTiny = named "Tiny" (Tall 1 (1/10) (7/10))
 
 -- Logging/Status
 wmLog h = dynamicLogWithPP $ defaultPP
@@ -43,8 +44,9 @@ wmLog h = dynamicLogWithPP $ defaultPP
     , ppSep                 = " : "
     , ppLayout              = (\x -> case x of
         "Hinted Tall" -> "#"
-        "Hinted Wide" -> "="
+        "Hinted Wide" -> "!"
         "Hinted Full" -> "*"
+        "Hinted Tiny" -> "@"
         _             -> "~"
     )
     , ppTitle               = xmobarColor colorFocusedBorder "" . shorten 50
