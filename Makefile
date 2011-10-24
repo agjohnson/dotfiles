@@ -1,6 +1,6 @@
 # Dotfiles Make
 
-VIM_SYNTAX := textile clojure taskpaper
+VIM_SYNTAX := textile clojure taskpaper mkd
 VIM_COLORS := ohess
 
 SERVER_FILES := cshrc tmux.conf
