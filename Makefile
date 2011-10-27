@@ -7,14 +7,14 @@ SERVER_FILES := cshrc tmux.conf
 DESKTOP_FILES := conkyrc Xdefaults
 
 
-.PHONY: install-server install-desktop install-all vim xmonad \
+.PHONY: install-server install-desktop install-all vim mutt xmonad \
 	misc-server misc-desktop
 
 install: install-server
 
 install-server: vim misc-server
 
-install-desktop: install-server xmonad misc-desktop
+install-desktop: install-server mutt xmonad misc-desktop
 
 
 # Vim rules
@@ -22,7 +22,9 @@ install-desktop: install-server xmonad misc-desktop
 vim: vim-paths vim-files
 
 vim-paths:
-	-mkdir -p ~/.vim/{syntax,colors}
+	-[ -d "~/.vim" ] || mkdir "~/.vim"
+	-[ -d "~/.vim/syntax" ] || mkdir "~/.vim/syntax"
+	-[ -d "~/.vim/colors" ] || mkdir "~/.vim/colors"
 	
 vim-files: ~/.vimrc \
 	$(foreach vsyn,$(VIM_SYNTAX),~/.vim/syntax/$(vsyn).vim) \
@@ -34,6 +36,21 @@ vim-files: ~/.vimrc \
 ~/.vim/%.vim :: vim/%.vim
 	cp $? $@
 
+
+# Mutt rules
+
+mutt: mutt-paths mutt-files
+
+mutt-paths:
+	-[ -d "~/.mutt" ] || mkdir "~/.mutt"
+
+mutt-files: ~/.muttrc ~/.mutt/account.muttrc ~/.mutt/aliases.muttrc
+
+~/.muttrc: muttrc
+	cp $? $@
+
+~/.mutt/%.muttrc: mutt/%.muttrc
+	-[ -e $@ ] || cp $? $@
 
 # Xmonad
 

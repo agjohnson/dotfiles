@@ -1,0 +1,56 @@
+# Mutt - muttrc
+
+# Separate file for mailbox authentication
+source ~/.mutt/account.muttrc
+
+# Settings
+set editor="vim"
+set forward_format="FWD: %s"
+set forward_quote=yes
+set mbox_type=Maildir
+set move=no
+set sort=threads
+set beep_new=yes
+
+# Aliases
+set alias_file=~/.mutt/aliases.muttrc
+set sort_alias=alias
+set reverse_alias=yes
+source ~/.mutt/aliases.muttrc
+
+# Pending and Archive
+macro index,pager ,a "<tag-prefix><copy-message>=Archive<enter><enter><tag-prefix><delete-message>"
+macro index,pager ,p "<tag-prefix><copy-message>=Pending<enter><enter><tag-prefix><delete-message>"
+
+#source /usr/pkg/share/examples/mutt/gpg.rc
+
+ignore *
+unignore from date subject to cc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+unignore posted-to:
+
+# Colors
+color attachment brightmagenta default
+color error brightwhite red
+color hdrdefault brightblack default
+color indicator brightyellow black
+color markers brightcyan default
+color message brightcyan default
+color normal white default
+color quoted brightblack default
+color search brightgreen default
+color signature green default
+color status brightcyan black
+color tilde blue default
+color tree brightblue default
+color signature green default
+color underline yellow default
+color header green default ^(From|Subject): # Important headers
+color body brightblue default "(ftp|http)://[^ ]+"
+color body brightblue default [-a-z_0-9.]+@[-a-z_0-9.]+ 
+
+color index yellow default ~U
+color index magenta default ~F
+color index yellow default ~T
+color index brightblack default ~D
+

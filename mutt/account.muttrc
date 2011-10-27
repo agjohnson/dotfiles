@@ -1,0 +1,22 @@
+# Mutt - Account
+
+# Mailbox locations
+#set imap_user=""
+#set imap_pass=""
+#set smtp_url="smtp://user@server:587/"
+#set smtp_pass=""
+#set spoolfile="imaps://server/INBOX"
+#set folder="imaps://server/INBOX"
+#set record="=Sent"
+#set postponed="=Drafts"
+#mailboxes = =Archive =Sent =Drafts =Trash
+
+
+# Personal account
+#set realname=""
+#set from=""
+#set signature="cat ~/.mutt/account-sig.txt |"
+
+#set reverse_name
+#alternates info@example.com
+
