@@ -22,9 +22,9 @@ install-desktop: install-server mutt xmonad misc-desktop
 vim: vim-paths vim-files
 
 vim-paths:
-	-[ -d "~/.vim" ] || mkdir "~/.vim"
-	-[ -d "~/.vim/syntax" ] || mkdir "~/.vim/syntax"
-	-[ -d "~/.vim/colors" ] || mkdir "~/.vim/colors"
+	-[ -d ~/.vim ] || mkdir ~/.vim
+	-[ -d ~/.vim/syntax ] || mkdir ~/.vim/syntax
+	-[ -d ~/.vim/colors ] || mkdir ~/.vim/colors
 	
 vim-files: ~/.vimrc \
 	$(foreach vsyn,$(VIM_SYNTAX),~/.vim/syntax/$(vsyn).vim) \
@@ -42,7 +42,7 @@ vim-files: ~/.vimrc \
 mutt: mutt-paths mutt-files
 
 mutt-paths:
-	-[ -d "~/.mutt" ] || mkdir "~/.mutt"
+	-[ -d ~/.mutt ] || mkdir ~/.mutt
 
 mutt-files: ~/.muttrc ~/.mutt/account.muttrc ~/.mutt/aliases.muttrc
 
@@ -57,7 +57,7 @@ mutt-files: ~/.muttrc ~/.mutt/account.muttrc ~/.mutt/aliases.muttrc
 xmonad: ~/.xmonad/xmonad.hs ~/.xmobarrc
 
 ~/.xmonad/xmonad.hs: xmonad/xmonad.hs
-	-mkdir ~/.xmonad
+	-[ -d ~/.xmonad ] || mkdir ~/.xmonad
 	cp $? $@
 
 ~/.xmobarrc: xmobarrc
