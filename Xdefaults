@@ -62,7 +62,7 @@ URxvt*color7: whitesmoke
 URxvt*color15: ghostwhite
 
 ! Urxvt Scheme - coding
-coding*font: xft:Inconsolata-10.5:style=Normal
+coding*font: xft:Inconsolata-11:style=Normal
 coding*background: grey10
 coding*foreground: #DED6CA
 coding*color0: #4d4843
@@ -102,5 +102,4 @@ tiny*color6: #FFD28D
 tiny*color14: #FFDDAA
 tiny*color7: #D1C8BC
 tiny*color15: #DED6CA
-p
 

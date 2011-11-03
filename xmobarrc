@@ -1,5 +1,5 @@
 Config 
-    { font = "xft:DejaVu Sans Mono-8:style=Book"
+    { font = "xft:Inconsolata-11:style=Normal"
     , bgColor = "#111111"
     , fgColor = "#888877"
     , position = Top
