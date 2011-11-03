@@ -3,13 +3,14 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.Named
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
 import System.IO
 
 main = do
-    hXmobar <- spawnPipe "xmobar"
-    xmonad =<< xmobar defaultConfig 
+    hXmobar <- spawnPipe "/usr/bin/xmobar"
+    xmonad =<< xmobar ((withUrgencyHook NoUrgencyHook) defaultConfig) 
         { modMask               = mod4Mask 
         , terminal              = "urxvt -name coding"
         , workspaces            = map show [1..6]
@@ -39,7 +40,7 @@ wmLog h = dynamicLogWithPP $ defaultPP
     , ppVisible             = xmobarColor colorNormalBorder "" . pad
     , ppHidden              = xmobarColor "#D1C8BC" "" . pad
     , ppHiddenNoWindows     = xmobarColor "#5C5245" "" . pad
-    , ppUrgent              = xmobarColor "#4d4843" "#D1C8BC" . pad
+    , ppUrgent              = xmobarColor "#101010" colorFocusedBorder . xmobarStrip
     , ppWsSep               = ""
     , ppSep                 = " : "
     , ppLayout              = (\x -> case x of
