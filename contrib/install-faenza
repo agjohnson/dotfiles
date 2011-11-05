@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ $UID -ne 0 ]; then
+    echo "Error: Sorry pal, you need to be root."
+    exit 1
+fi
+
+function get-faenza() {
+    file=$1
+    url=$2
+    if [ ! -e $file ]; then 
+        curl -Lo "$file" "$url"
+    fi
+}
+
+function inst-faenza() {
+    func=$1
+    file=$2
+    url=$3
+    $func $file $url
+    if [ -e $file ]; then
+        case $file in
+            faenza-pidgin.zip)
+                unzip faenza-pidgin.zip
+                mv -v /usr/share/pixmaps/pidgin/tray /usr/share/pixmaps/pidgin/tray.orig
+                mkdir -v /usr/share/pixmaps/pidgin/faenza
+                mv -v dark /usr/share/pixmaps/pidgin/faenza/hicolor
+                ln -s /usr/share/pixmaps/pidgin/faenza /usr/share/pixmaps/pidgin/tray
+                ;;
+            *)
+                ;;
+        esac
+    fi
+}
+
+inst-faenza get-faenza faenza-pidgin.zip "http://ubuntuone.com/p/133Z/" 
+
