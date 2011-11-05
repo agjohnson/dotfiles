@@ -54,7 +54,7 @@ mutt-files: ~/.muttrc ~/.mutt/account.muttrc ~/.mutt/aliases.muttrc
 
 # Xmonad
 
-xmonad: ~/.xmonad/xmonad.hs ~/.xmobarrc
+xmonad: ~/.xmonad/xmonad.hs ~/.xmobarrc ~/.xinitrc
 
 ~/.xmonad/xmonad.hs: xmonad/xmonad.hs
 	-[ -d ~/.xmonad ] || mkdir ~/.xmonad
@@ -63,6 +63,8 @@ xmonad: ~/.xmonad/xmonad.hs ~/.xmobarrc
 ~/.xmobarrc: xmobarrc
 	cp $? $@
 
+~/.xinitrc: xinitrc
+	cp $? $@
 
 # Misc
 

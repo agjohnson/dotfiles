@@ -1,8 +1,8 @@
 Config 
-    { font = "xft:Inconsolata-11:style=Normal"
+    { font = "xft:Inconsolata-10:style=Normal"
     , bgColor = "#111111"
     , fgColor = "#888877"
-    , position = Top
+    , position = TopSize L 95 24
     , lowerOnStart = True
     , commands = 
         [ Run Cpu ["-t","cpu: <total>%","-L","3","-H","50","--normal","green","--high","red"] 10
