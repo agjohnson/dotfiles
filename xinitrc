@@ -28,7 +28,12 @@ if [ -x /usr/bin/trayer ]; then
       --height 24 --padding 4 &
 fi
 
-# nm-applet
+
+# gnome settings and nm-applet
+if [ -x /usr/bin/gnome-settings-daemon ]; then
+    /usr/bin/gnome-settings-daemon &
+fi 
+
 if [ -x /usr/bin/nm-applet ]; then
     /usr/bin/nm-applet &
 fi
