@@ -24,7 +24,7 @@ fi
 # Add tray
 if [ -x /usr/bin/trayer ]; then
     trayer --edge top --align right --SetDockType true --SetPartialStrut true \
-      --expand true --width 6 --transparent true --alpha 0 --tint 0x111111 \
+      --expand true --width 5 --transparent true --alpha 0 --tint 0x111111 \
       --height 24 --padding 4 &
 fi
 
