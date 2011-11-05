@@ -1,5 +1,5 @@
 Config 
-    { font = "xft:Inconsolata-10:style=Normal"
+    { font = "xft:Inconsolata-11:style=Normal"
     , bgColor = "#111111"
     , fgColor = "#888877"
     , position = TopSize L 95 24

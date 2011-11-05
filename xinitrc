@@ -28,5 +28,10 @@ if [ -x /usr/bin/trayer ]; then
       --height 24 --padding 4 &
 fi
 
+# nm-applet
+if [ -x /usr/bin/nm-applet ]; then
+    /usr/bin/nm-applet &
+fi
+
 exec xmonad
 
