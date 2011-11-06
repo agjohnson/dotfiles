@@ -16,26 +16,20 @@ fi
 # Set cursor
 xsetroot -cursor_name left_ptr
 
-# Set background
-if [ -e ~/background.jpg && -x /usr/bin/feh ]; then
-    feh --bg-scale ~/background.jpg
-fi
-
 # Add tray
 if [ -x /usr/bin/trayer ]; then
     trayer --edge top --align right --SetDockType true --SetPartialStrut true \
-      --expand true --width 5 --transparent true --alpha 0 --tint 0x111111 \
-      --height 24 --padding 4 &
+      --expand true --width 7 --transparent true --alpha 0 \
+      --tint 0x111111 --height 24 --padding 4 &
 fi
 
 
-# gnome settings and nm-applet
-if [ -x /usr/bin/gnome-settings-daemon ]; then
-    /usr/bin/gnome-settings-daemon &
-fi 
-
 if [ -x /usr/bin/nm-applet ]; then
     /usr/bin/nm-applet &
+fi
+
+if [ -x /usr/bin/gnome-volume-control-applet ]; then
+    /usr/bin/gnome-volume-control-applet &
 fi
 
 exec xmonad

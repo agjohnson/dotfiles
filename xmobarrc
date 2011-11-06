@@ -2,16 +2,15 @@ Config
     { font = "xft:Inconsolata-11:style=Normal"
     , bgColor = "#111111"
     , fgColor = "#888877"
-    , position = TopSize L 95 24
+    , position = TopSize L 94 24
     , lowerOnStart = True
     , commands = 
-        [ Run Cpu ["-t","cpu: <total>%","-L","3","-H","50","--normal","green","--high","red"] 10
+        [ Run Cpu ["-t","cpu: <total>","-L","3","-H","50","--normal","green","--high","red"] 10
         , Run Memory ["-t","mem: <usedratio>%"] 10
-        , Run Com "uname" ["-s","-r"] "" 36000
         , Run StdinReader
         , Run Date "%a %b %_d %H:%M" "date" 10 
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = "%StdinReader% }{ %cpu% | %memory% | %uname% | %date%" 
+    , template = "%StdinReader% }{ %cpu% : %memory% : %date%     " 
     }

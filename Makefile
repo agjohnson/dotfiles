@@ -6,9 +6,11 @@ VIM_COLORS := ohess
 SERVER_FILES := cshrc tmux.conf
 DESKTOP_FILES := conkyrc Xdefaults
 
+GTK_ICONS_URL := "http://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.1.tar.gz"
+
 
 .PHONY: install-server install-desktop install-all vim mutt xmonad \
-	misc-server misc-desktop
+	gtk gtk-themes misc-server misc-desktop
 
 install: install-server
 
@@ -65,6 +67,20 @@ xmonad: ~/.xmonad/xmonad.hs ~/.xmobarrc ~/.xinitrc
 
 ~/.xinitrc: xinitrc
 	cp $? $@
+
+# GTK
+
+gtk: ~/.gtkrc ~/.gtkrc-2.0 gtk-themes
+
+~/.gtkrc: gtkrc
+	cp $? $@
+
+~/.gtkrc-2.0: gtkrc
+	cp $? $@
+
+gtk-themes:
+	contrib/install-faenza
+
 
 # Misc
 
