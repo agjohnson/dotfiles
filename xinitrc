@@ -23,12 +23,15 @@ if [ -x /usr/bin/trayer ]; then
       --tint 0x111111 --height 24 --padding 4 &
 fi
 
-
+# Network
 if [ -x /usr/bin/nm-applet ]; then
     /usr/bin/nm-applet &
 fi
 
-if [ -x /usr/bin/gnome-volume-control-applet ]; then
+# Sound
+if [ -x /usr/bin/volti ]; then
+    /usr/bin/volti &
+elif [ -x /usr/bin/gnome-volume-control-applet ]; then
     /usr/bin/gnome-volume-control-applet &
 fi
 
