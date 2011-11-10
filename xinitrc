@@ -11,7 +11,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#conky &
+# Local defaults for fonts
+if [ -e ~/.Xdefaults.local ]; then
+    xrdb ~/.Xdefaults.local
+fi
 
 # Set cursor
 xsetroot -cursor_name left_ptr
