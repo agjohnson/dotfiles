@@ -5,9 +5,11 @@ import XMonad.Layout.Named
 import XMonad.Layout.ResizableTile 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
+import XMonad.ManageHook
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
 import System.IO
+import qualified XMonad.StackSet as W
 
 main = do
     hXmobar <- spawnPipe "/usr/bin/xmobar"
@@ -19,7 +21,7 @@ main = do
         , focusedBorderColor    = colorFocusedBorder
         , borderWidth           = 3
         , layoutHook            = avoidStruts $ wmLayout
-        , manageHook            = manageDocks <+> manageHook defaultConfig
+        , manageHook            = manageDocks <+> wmManage <+> manageHook defaultConfig
         , logHook               = wmLog hXmobar 
         } `additionalKeys` wmKeys)
 
@@ -40,6 +42,14 @@ wmKeys =
     [ ((mod4Mask, xK_z), sendMessage MirrorShrink)
     , ((mod4Mask, xK_a), sendMessage MirrorExpand)
     ]
+
+-- Manage
+wmManage =
+    composeAll 
+        [ resource =? "pidgin" --> doFloat
+        , resource =? "virt-manager" --> doFloat
+        , resource =? "chromium-browser" --> doF (W.swapMaster)
+        ]
 
 -- Logging/Status
 wmLog h = dynamicLogWithPP $ defaultPP
