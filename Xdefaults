@@ -62,7 +62,28 @@ URxvt*color7: whitesmoke
 URxvt*color15: ghostwhite
 
 ! Urxvt Scheme - coding
-coding*font: xft:Inconsolata-11:style=Normal
+codingold*font: xft:Inconsolata-10:style=Normal
+codingold*background: grey10
+codingold*foreground: #DED6CA
+codingold*color0: #4d4843
+codingold*color8: #5C5245
+codingold*color1: #76AEED
+codingold*color9: #75B6FF
+codingold*color2: #FFC469
+codingold*color10: #FFD28D
+codingold*color3: #E2E7F3
+codingold*color11: #EBEFF9
+codingold*color4: #CEA2EF
+codingold*color12: #D6B6EF
+codingold*color5: #B0D6FF
+codingold*color13: #D0F6FF
+codingold*color6: #FFD28D
+codingold*color14: #FFDDAA
+codingold*color7: #D1C8BC
+codingold*color15: #DED6CA
+
+! Urxvt Scheme - coding
+coding*font: xft:Inconsolata-10:style=Normal
 coding*background: grey10
 coding*foreground: #DED6CA
 coding*color0: #4d4843
@@ -71,10 +92,10 @@ coding*color1: #76AEED
 coding*color9: #75B6FF
 coding*color2: #FFC469
 coding*color10: #FFD28D
-coding*color3: #E2E7F3
-coding*color11: #EBEFF9
-coding*color4: #CEA2EF
-coding*color12: #D6B6EF
+coding*color3: #CEA2EF
+coding*color11: #D6B6EF
+coding*color4: #e10e36
+coding*color12: #fb365b
 coding*color5: #B0D6FF
 coding*color13: #D0F6FF
 coding*color6: #FFD28D
