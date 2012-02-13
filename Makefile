@@ -3,6 +3,8 @@
 VIM_SYNTAX := textile clojure taskpaper mkd
 VIM_COLORS := ohess
 
+MERCURIAL_STYLES := dlog nlog sglog slog
+
 SERVER_FILES := cshrc tmux.conf
 DESKTOP_FILES := conkyrc Xdefaults
 
@@ -10,13 +12,28 @@ GTK_ICONS_URL := "http://faenza-icon-theme.googlecode.com/files/faenza-icon-them
 
 
 .PHONY: install-server install-desktop install-all vim mutt xmonad \
-	gtk gtk-themes misc-server misc-desktop
+	gtk gtk-themes misc-server misc-desktop mercurial mercurial-paths \
+	mercurial-files
 
 install: install-server
 
-install-server: vim misc-server
+install-server: vim mercurial misc-server
 
 install-desktop: install-server mutt xmonad misc-desktop
+
+
+# Mercurial
+
+mercurial: mercurial-paths mercurial-files
+
+mercurial-paths:
+	-[ -d ~/.hg ] || mkdir ~/.hg
+
+mercurial-files: \
+	$(foreach mstyle,$(MERCURIAL_STYLES),~/.hg/$(mstyle).style)
+
+~/.hg/%.style :: hg/%.style
+	cp $? $@
 
 
 # Vim rules
