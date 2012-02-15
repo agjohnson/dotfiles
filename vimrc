@@ -1,5 +1,6 @@
 set autoindent
-set nowrap
+set wrap
+set textwidth=80
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -16,6 +17,11 @@ imap [8~ <End>
 
 syntax on
 color ohess
+
+if exists('+colorcolumn')
+  highlight ColorColumn ctermbg=0
+  set colorcolumn=80
+endif
 
 autocmd FileType make set noexpandtab
 autocmd FileType htmldjango,html,xhtml set tabstop=2
