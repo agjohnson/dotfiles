@@ -16,8 +16,11 @@ if [ -e ~/.Xdefaults.local ]; then
     xrdb ~/.Xdefaults.local
 fi
 
-# Set cursor
+# Set defaults
 xsetroot -cursor_name left_ptr
+feh --bg-scale "~/background.jpg"
+xmodmap -e "remove lock = Caps_Lock"
+xset b 0
 
 # Add tray
 if [ -x /usr/bin/trayer ]; then
