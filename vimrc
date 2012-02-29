@@ -8,6 +8,7 @@ set bs=2
 set nocp
 set indentkeys=
 set linebreak
+set clipboard=unnamed
 set showbreak=\ \ »\ 
 
 map [7~ <Home>
