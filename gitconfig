@@ -1,0 +1,23 @@
+[user]
+    name = Anthony Johnson
+    email = aj@ohess.org
+[core]
+    pager = 
+[diff]
+	tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    b = branch
+	d = difftool
+    l = log -n 15
+    s = status
+    glog = log -n 15 --graph
+[color]
+    diff = auto
+    branch = auto
+    interactive = auto
+    status = auto
+[format]
+    pretty = tformat:"%C(red)%h%C(bold yellow)%d %Creset%s %C(black)<%ae> %ar%Creset"
+
