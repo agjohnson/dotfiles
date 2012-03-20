@@ -83,14 +83,20 @@ if ($?prompt) then
   if ($?warn_ssh) then
     set warn = "%{\033[41m%}${warn_ssh}${c0} ${warn}"
   endif
-
+  
+  # Chroot
+  set chroot = ""
+  if ($?SCHROOT_SESSION_ID) then
+    set chroot = "%{\033[44m%} %{\247%} ${c0} "
+  endif
 
   switch ($TERM)
     case "xterm*":
-      set prompt = "${title}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
+    case "screen":
+      set prompt = "${title}${chroot}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
-      set prompt = "${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "${warn}${chroot}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
   endsw
 endif
