@@ -110,3 +110,5 @@ misc-desktop: $(desktop_files_base)
 ~/.% :: %
 	cp $? $@
 
+include mk/tools.mk
+

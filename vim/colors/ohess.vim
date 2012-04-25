@@ -23,17 +23,17 @@ let colors_name = "ohess"
 :hi StatusLine guibg=#c2bfa5 guifg=black gui=none cterm=bold,reverse
 :hi StatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Title guifg=gold gui=bold cterm=bold ctermfg=yellow
-:hi Statement guifg=CornflowerBlue ctermfg=lightblue
+:hi Statement guifg=CornflowerBlue cterm=none ctermfg=darkblue
 :hi Visual gui=none guifg=khaki guibg=olivedrab cterm=reverse
 :hi WarningMsg guifg=salmon ctermfg=1
 :hi String guifg=SkyBlue ctermfg=darkcyan
-:hi Comment cterm=bold ctermfg=0 guifg=grey40
+:hi Comment cterm=none ctermfg=0 guifg=grey40
 :hi Constant guifg=#ffa0a0 ctermfg=brown
 :hi Special guifg=darkkhaki ctermfg=brown
-:hi Identifier guifg=salmon ctermfg=red
+:hi Identifier guifg=salmon cterm=none ctermfg=darkred
 :hi Include guifg=red ctermfg=red
 :hi PreProc guifg=red guibg=white ctermfg=red
-:hi Operator guifg=Red ctermfg=Red
+:hi Operator cterm=none guifg=Red ctermfg=red
 :hi Define guifg=gold gui=bold ctermfg=yellow
 :hi Type guifg=CornflowerBlue ctermfg=2
 :hi Function guifg=navajowhite ctermfg=brown
@@ -52,3 +52,14 @@ let colors_name = "ohess"
 :hi Underlined cterm=underline ctermfg=5
 :hi Error guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
 :hi SpellErrors guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
+
+:hi perlRepeat ctermfg=blue
+:hi perlConditional ctermfg=blue
+:hi perlStatementStorage ctermfg=blue
+:hi perlStatementControl ctermfg=blue
+:hi perlStatementFlow ctermfg=blue
+:hi perlStatementInclude ctermfg=blue
+:hi perlFunction ctermfg=blue
+:hi perlStatementPackage ctermfg=blue
+:hi perlPackageDecl ctermfg=darkmagenta
+

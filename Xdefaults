@@ -83,7 +83,7 @@ codingold*color7: #D1C8BC
 codingold*color15: #DED6CA
 
 ! Urxvt Scheme - coding
-coding*font: xft:Inconsolata-10:style=Normal
+coding*font: xft:Inconsolata-11:style=Normal
 coding*background: grey10
 coding*foreground: #DED6CA
 coding*color0: #4d4843
@@ -102,6 +102,27 @@ coding*color6: #FFD28D
 coding*color14: #FFDDAA
 coding*color7: #D1C8BC
 coding*color15: #DED6CA
+
+! Urxvt Scheme - bright
+bright*font: xft:Inconsolata-11:style=Normal
+bright*background: #fffaf5
+bright*foreground: #202010
+bright*color0: #b0b0a0
+bright*color8: #a0a090
+bright*color1: #138A81
+bright*color9: #20736D
+bright*color2: #606050
+bright*color10: #505040
+bright*color3: #B82743
+bright*color11: #AB0928
+bright*color4: #D90F37
+bright*color12: #B82743
+bright*color5: #54179E
+bright*color13: #512586
+bright*color6: #606050
+bright*color14: #505040
+bright*color7: #909080
+bright*color15: #808070
 
 ! Urxvt Scheme - tiny
 tiny*font: xft:DejaVu Sans Mono-8:style=Book
@@ -123,4 +144,25 @@ tiny*color6: #FFD28D
 tiny*color14: #FFDDAA
 tiny*color7: #D1C8BC
 tiny*color15: #DED6CA
+
+! urxvt - writing
+writing*font: xft:Droid Sans Mono-12:
+writing*background: #fffaf5
+writing*foreground: #202000
+writing*color0: #303010
+writing*color1: #e10e36
+writing*color2: #404020
+writing*color3: #505030
+writing*color4: #606040
+writing*color5: #707050
+writing*color6: #808060
+writing*color7: #909070
+writing*color8: #303010
+writing*color9: #fb365b
+writing*color10: #404020
+writing*color11: #505030
+writing*color12: #606040
+writing*color13: #707050
+writing*color14: #808060
+writing*color15: #909070
 
