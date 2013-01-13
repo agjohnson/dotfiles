@@ -1,17 +1,22 @@
 # Makefile - tools
 
 CPAN_URL="https://raw.github.com/miyagawa/cpanminus/master/cpanm"
+GIT_MELD_URL="https://raw.github.com/wmanley/git-meld/master/git-meld.pl"
 
 LOCALENV=~/.env
 CPANM=$(LOCALENV)/bin/cpanm
 
-install-tools: ~/.env/bin/ack
+install-tools: ~/.env/bin/ack ~/.env/bin/carton ~/.env/bin/rbenv ~/.env/bin/git-meld.pl
 
+# Perl tools
 $(LOCALENV)/bin/ack: $(CPANM) $(LOCALENV)/bin/localenv
-	$(CPANM) -L $(LOCALENV) App::Ack
+	$(CPANM) -l $(LOCALENV) App::Ack
+
+$(LOCALENV)/bin/carton: $(CPANM) $(LOCALENV)/bin/localenv
+	$(CPANM) -l $(LOCALENV) Carton
 
 $(LOCALENV)/bin/localenv: $(CPANM)
-	$(CPANM) -L $(LOCALENV) App::local::lib::helper
+	$(CPANM) -l $(LOCALENV) App::local::lib::helper
 
 $(LOCALENV)/bin/cpanm:
 	-mkdir -p ~/.env/bin
@@ -19,4 +24,19 @@ $(LOCALENV)/bin/cpanm:
 	chmod +x $(CPANM)
 	$(CPANM) -L $(LOCALENV) App::cpanminus
 
+$(LOCALENV)/bin/git-meld.pl:
+	curl -Lko $@ "$(GIT_MELD_URL)"
+	chmod +x $@
+
+# Ruby stuff
+$(LOCALENV)/bin/rbenv:
+	cd ~/.env && \
+		curl -Lko - 'https://github.com/sstephenson/rbenv/tarball/master' | \
+			pax -z -r -v -s '/^[^\/]*\///'
+	rm ~/.env/bin/rbenv
+	ln -s ~/.env/libexec/rbenv ~/.env/bin/
+	mkdir -p ~/.env/plugins/install
+	cd ~/.env/plugins/install && \
+		curl -Lko - 'https://github.com/sstephenson/ruby-build/tarball/master' | \
+			pax -z -r -v -s '/^[^\/]*\///'
 

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+cd ~/.icons/Faenza-Dark/status
+
+for size in 16 22 24 32 48; do
+    (
+        cd ${size}/
+        echo "Editing `pwd` ..."
+
+        ln -sv gpm-primary-080-charging.png battery-full-charging.png
+        ln -sv gpm-primary-060-charging.png battery-good-charging.png
+        ln -sv gpm-primary-040-charging.png battery-low-charging.png
+        ln -sv gpm-primary-020-charging.png battery-caution-charging.png
+
+        ln -sv gpm-primary-100.png battery-full.png
+        ln -sv gpm-primary-060.png battery-good.png
+        ln -sv gpm-primary-040.png battery-low.png
+        ln -sv gpm-primary-020.png battery-caution.png
+    )
+done
+

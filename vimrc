@@ -10,6 +10,7 @@ set indentkeys=
 set linebreak
 set clipboard=unnamed
 set showbreak=\ \ »\ 
+set nu
 
 map [7~ <Home>
 map [8~ <End>
@@ -24,10 +25,21 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
+highlight CursorLine term=bold cterm=bold
+set cursorline
+set list lcs=tab:-·,trail:¶
+highlight clear SpellBad
+highlight SpellBad ctermbg=0
+highlight LineNr ctermfg=0
+
 autocmd FileType make set noexpandtab
-autocmd FileType htmldjango,html,xhtml set tabstop=2
-autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 spell spelllang=en 
+autocmd FileType htmldjango,html,xhtml,ruby,puppet set tabstop=2 shiftwidth=2
+autocmd FileType html,htmldjango,xhtml set textwidth=0
+autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 spell spelllang=en
 autocmd BufEnter,BufNew *.txtl set syntax=textile tabstop=2 spell spelllang=en
-autocmd BufEnter,BufNew *.yaml set tabstop=2
+autocmd BufEnter,BufNew *.sls,*.yaml set tabstop=2 shiftwidth=2 syntax=yaml
 autocmd BufEnter,BufNew *.taskpaper set wrap syntax=taskpaper
+autocmd BufEnter,BufNew Vagrantfile,Capfile set syntax=ruby tabstop=2 shiftwidth=2
+
+let g:syntastic_auto_loc_list=1
 
