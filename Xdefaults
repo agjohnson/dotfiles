@@ -35,17 +35,21 @@ URxvt*scrollBar_floating: true
 URxvt*scrollBar_right: true
 URxvt*scrollColor: #202020
 URxvt*termName: xterm
-URxvt*urllauncher: /usr/bin/chromium 
+URxvt*perl-lib: /home/anthony/.urxvt/ext
+URxvt*perl-ext-common: default,matcher,font-size
+URxvt*keysym.C-plus: perl:font-size:increase
+URxvt*keysym.C-minus: perl:font-size:decrease
+URxvt*urlLauncher: /usr/bin/chromium 
 URxvt*matcher.button: 3
 URxvt*saveLines: 8192
-URxvt*internalBorder: 20
+URxvt*internalBorder: 12
 URxvt*urgentOnBell: true
 
 ! Urxvt scheme - base
 URxvt*background: grey10
 URxvt*foreground: ghostwhite
-URxvt*color0: #4d4843
-URxvt*color8: #777069
+URxvt*color0: #8d8d80
+URxvt*color8: #9d9d90
 URxvt*color1: #e10e36
 URxvt*color9: #fb365b
 URxvt*color2: #c7cd22
@@ -83,11 +87,11 @@ codingold*color7: #D1C8BC
 codingold*color15: #DED6CA
 
 ! Urxvt Scheme - coding
-coding*font: xft:Inconsolata-11:style=Normal
+coding*font: xft:Liberation Mono:pixelsize=12:style=Regular
 coding*background: grey10
 coding*foreground: #DED6CA
-coding*color0: #4d4843
-coding*color8: #5C5245
+coding*color0: #5d5843
+coding*color8: #6C6255
 coding*color1: #76AEED
 coding*color9: #75B6FF
 coding*color2: #FFC469
@@ -104,7 +108,7 @@ coding*color7: #D1C8BC
 coding*color15: #DED6CA
 
 ! Urxvt Scheme - bright
-bright*font: xft:Inconsolata-11:style=Normal
+bright*font: xft:Liberation Mono-9:style=Regular
 bright*background: #fffaf5
 bright*foreground: #202010
 bright*color0: #b0b0a0
@@ -146,6 +150,7 @@ tiny*color7: #D1C8BC
 tiny*color15: #DED6CA
 
 ! urxvt - writing
+writing*internalBorder: 50
 writing*font: xft:Droid Sans Mono-12:
 writing*background: #fffaf5
 writing*foreground: #202000
@@ -166,3 +171,24 @@ writing*color13: #707050
 writing*color14: #808060
 writing*color15: #909070
 
+! urxvt - big
+big*internalBorder: 45
+big*font: xft:Droid Sans Mono-12:
+big*background: grey10
+big*foreground: #DED6CA
+big*color0: #5d5843
+big*color8: #6C6255
+big*color1: #76AEED
+big*color9: #75B6FF
+big*color2: #FFC469
+big*color10: #FFD28D
+big*color3: #CEA2EF
+big*color11: #D6B6EF
+big*color4: #e10e36
+big*color12: #fb365b
+big*color5: #B0D6FF
+big*color13: #D0F6FF
+big*color6: #FFD28D
+big*color14: #FFDDAA
+big*color7: #D1C8BC
+big*color15: #DED6CA
