@@ -1,4 +1,6 @@
-execute pathogen#infect()
+if version > 604
+    execute pathogen#infect()
+endif
 
 set autoindent
 set wrap
@@ -22,9 +24,12 @@ imap [8~ <End>
 
 syntax on
 color ohess
-let g:Powerline_symbols = 'unicode'
-let g:Powerline_dividers_override = [[0x2592], [0x276f], [0x2592], [0x276e]]
-let g:Powerline_colorscheme='ohess'
+
+if exists('g:Powerline_symbols')
+    let g:Powerline_symbols = 'unicode'
+    let g:Powerline_dividers_override = [[0x2592], [0x276f], [0x2592], [0x276e]]
+    let g:Powerline_colorscheme='ohess'
+endif
 
 if exists('+colorcolumn')
   highlight ColorColumn ctermbg=0
@@ -32,7 +37,9 @@ if exists('+colorcolumn')
 endif
 
 highlight CursorLine term=bold cterm=bold
-set cursorline
+if exists('+cursorline')
+    set cursorline
+endif
 set list lcs=tab:-·,trail:¶
 highlight clear SpellBad
 highlight SpellBad ctermbg=0
