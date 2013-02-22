@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 set autoindent
 set wrap
 set textwidth=80
@@ -11,6 +13,7 @@ set linebreak
 set clipboard=unnamed
 set showbreak=\ \ »\ 
 set nu
+set laststatus=2
 
 map [7~ <Home>
 map [8~ <End>
@@ -19,6 +22,9 @@ imap [8~ <End>
 
 syntax on
 color ohess
+let g:Powerline_symbols = 'unicode'
+let g:Powerline_dividers_override = [[0x2592], [0x276f], [0x2592], [0x276e]]
+let g:Powerline_colorscheme='ohess'
 
 if exists('+colorcolumn')
   highlight ColorColumn ctermbg=0
