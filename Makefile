@@ -10,20 +10,19 @@ GTK_ICONS_URL := "http://faenza-icon-theme.googlecode.com/files/faenza-icon-them
 BUILD := _build
 
 
-.PHONY: install-server install-desktop install-all vim mutt xmonad \
+.PHONY: build build-desktop install vim mutt xmonad \
 	gtk gtk-themes misc-server misc-desktop mercurial mercurial-paths \
 	mercurial-files
 
 build: vim mercurial misc-server
 
+build-desktop: build mutt xmonad misc-desktop
+
 clean:
 	rm -rf $(BUILD)
 
-install: install-server
-
-install-server: vim mercurial misc-server
-
-install-desktop: install-server mutt xmonad misc-desktop
+install:
+	rsync -crai $(BUILD)/ ~/
 
 
 # Mercurial
