@@ -1,7 +1,9 @@
-if version > 604
-    execute pathogen#infect()
-endif
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
+if has('multi_byte')
+    set encoding=utf-8
+endif
 set autoindent
 set wrap
 set textwidth=80
@@ -25,11 +27,9 @@ imap [8~ <End>
 syntax on
 color ohess
 
-if exists('g:Powerline_symbols')
-    let g:Powerline_symbols = 'unicode'
-    let g:Powerline_dividers_override = [[0x2592], [0x276f], [0x2592], [0x276e]]
-    let g:Powerline_colorscheme='ohess'
-endif
+let g:Powerline_symbols = 'unicode'
+let g:Powerline_dividers_override = [[0x2592], [0x276f], [0x2592], [0x276e]]
+let g:Powerline_colorscheme='ohess'
 
 if exists('+colorcolumn')
   highlight ColorColumn ctermbg=0
@@ -56,3 +56,5 @@ autocmd BufEnter,BufNew Vagrantfile,Capfile set syntax=ruby tabstop=2 shiftwidth
 
 let g:syntastic_auto_loc_list=1
 
+let g:pad_dir = '/home/anthony/secure/docs/notes'
+let g:pad_default_format = 'textile'
