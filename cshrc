@@ -97,10 +97,10 @@ if ($?prompt) then
   switch ($TERM)
     case "xterm*":
     case "screen":
-      set prompt = "${title}${chroot}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "%{\007%}${title}${chroot}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
-      set prompt = "${warn}${chroot}${c2}%T %m %~${c0} ${c1}%#${c0} "
+      set prompt = "%{\007%}${warn}${chroot}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
   endsw
 endif
