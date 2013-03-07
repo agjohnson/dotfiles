@@ -1,3 +1,4 @@
+set shell=/bin/sh
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
@@ -48,7 +49,7 @@ highlight LineNr ctermfg=0
 autocmd FileType make set noexpandtab
 autocmd FileType htmldjango,html,xhtml,ruby,puppet set tabstop=2 shiftwidth=2
 autocmd FileType html,htmldjango,xhtml set textwidth=0
-autocmd BufEnter,BufNew *.mdwn set syntax=mkd tabstop=2 spell spelllang=en
+autocmd BufEnter,BufNew *.mdwn,*.md set syntax=mkd tabstop=2 spell spelllang=en
 autocmd BufEnter,BufNew *.txtl set syntax=textile tabstop=2 spell spelllang=en
 autocmd BufEnter,BufNew *.sls,*.yaml set tabstop=2 shiftwidth=2 syntax=yaml
 autocmd BufEnter,BufNew *.taskpaper set wrap syntax=taskpaper
@@ -57,4 +58,8 @@ autocmd BufEnter,BufNew Vagrantfile,Capfile set syntax=ruby tabstop=2 shiftwidth
 let g:syntastic_auto_loc_list=1
 
 let g:pad_dir = '/home/anthony/secure/docs/notes'
-let g:pad_default_format = 'textile'
+let g:pad_default_format = 'mkd'
+let g:pad_window_height = 10
+let g:pad_window_width = 85
+let g:pad_default_file_extension = '.md'
+let g:pad_position = { "list" : "bottom", "pads": "right" }
