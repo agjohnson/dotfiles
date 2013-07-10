@@ -1,7 +1,7 @@
 Xcursor.theme: Vanilla-DMZ-AA
 
 ! XTerm class
-XTerm*faceName: DejaVu Sans Mono:style=Book
+XTerm*faceName: Droid Sans Mono
 XTerm*faceSize: 10
 XTerm*termName: xterm-color
 XTerm*boldMode: false
@@ -27,7 +27,7 @@ XTerm*color7: whitesmoke
 XTerm*color15: ghostwhite
 
 ! Urxvt class
-URxvt.font: xft:DejaVu Sans Mono-8:style=Book
+URxvt*font: xft:DejaVu Sans Mono-8:style=Book
 URxvt*fading: 50
 URxvt*scrollBar: true
 URxvt*scrollstyle: plain
@@ -36,34 +36,32 @@ URxvt*scrollBar_right: true
 URxvt*scrollColor: #202020
 URxvt*termName: xterm
 URxvt*perl-lib: /home/anthony/.urxvt/ext
-URxvt*perl-ext-common: default,matcher,font-size
-URxvt*keysym.C-plus: perl:font-size:increase
-URxvt*keysym.C-minus: perl:font-size:decrease
-URxvt*urlLauncher: /usr/bin/chromium 
+URxvt*perl-ext-common: default,matcher,font-size,border-size
+URxvt*urlLauncher: /usr/bin/chromium
 URxvt*matcher.button: 3
 URxvt*saveLines: 8192
-URxvt*internalBorder: 12
+URxvt*internalBorder: 25
 URxvt*urgentOnBell: true
 
 ! Urxvt scheme - base
-URxvt*background: grey10
-URxvt*foreground: ghostwhite
-URxvt*color0: #8d8d80
-URxvt*color8: #9d9d90
-URxvt*color1: #e10e36
-URxvt*color9: #fb365b
-URxvt*color2: #c7cd22
-URxvt*color10: #dfe544
-URxvt*color3: #f4a919
-URxvt*color11: #f6ba47
-URxvt*color4: #14abbd
-URxvt*color12: #32d4e7
-URxvt*color5: #3079c4
-URxvt*color13: #4294e7
-URxvt*color6: #819eb7
-URxvt*color14: #bbd0e1
-URxvt*color7: whitesmoke
-URxvt*color15: ghostwhite
+URxvt*background: #3f3f35
+URxvt*foreground: #dfdfd5
+URxvt*color0: #5f5f55
+URxvt*color1: #E5CB04
+URxvt*color2: #D85F54
+URxvt*color3: #AFA392
+URxvt*color4: #E16D2E
+URxvt*color5: #A47AF9
+URxvt*color6: #EAE4A8
+URxvt*color7: #D1C8BC
+URxvt*color8: #1f1f15
+URxvt*color9: #FFE300
+URxvt*color10: #C84F44
+URxvt*color11: #C0B9B4
+URxvt*color12: #DB5427
+URxvt*color13: #9573E0
+URxvt*color14: #FFFEC1
+URxvt*color15: #DED6CA
 
 ! Urxvt Scheme - coding
 codingold*font: xft:Inconsolata-10:style=Normal
@@ -87,28 +85,19 @@ codingold*color7: #D1C8BC
 codingold*color15: #DED6CA
 
 ! Urxvt Scheme - coding
-coding*font: xft:Liberation Mono:pixelsize=12:style=Regular
-coding*background: grey10
-coding*foreground: #DED6CA
-coding*color0: #5d5843
-coding*color8: #6C6255
-coding*color1: #76AEED
-coding*color9: #75B6FF
-coding*color2: #FFC469
-coding*color10: #FFD28D
-coding*color3: #CEA2EF
-coding*color11: #D6B6EF
-coding*color4: #e10e36
-coding*color12: #fb365b
-coding*color5: #B0D6FF
-coding*color13: #D0F6FF
-coding*color6: #FFD28D
-coding*color14: #FFDDAA
-coding*color7: #D1C8BC
-coding*color15: #DED6CA
+coding*font: xft:Droid Sans Mono-10.5:style=Regular
+coding*internalBorder: 25
+
+! urxvt - big
+big*font: xft:Droid Sans Mono-14
+big*internalBorder: 45
+
+! urxvt - focus
+focus*font: xft:Droid Sans Mono-10.5:style=Regular
+focus*internalBorder: 119
 
 ! Urxvt Scheme - bright
-bright*font: xft:Liberation Mono-9:style=Regular
+bright*font: xft:Droid Sans Mono-10.5:style=Regular
 bright*background: #fffaf5
 bright*foreground: #202010
 bright*color0: #b0b0a0
@@ -127,6 +116,27 @@ bright*color6: #606050
 bright*color14: #505040
 bright*color7: #909080
 bright*color15: #808070
+
+! Urxvt Scheme - bignbright
+bignbright*font: xft:Liberation Mono-11:style=Regular
+bignbright*background: #fffaf5
+bignbright*foreground: #202010
+bignbright*color0: #b0b0a0
+bignbright*color8: #a0a090
+bignbright*color1: #138A81
+bignbright*color9: #20736D
+bignbright*color2: #606050
+bignbright*color10: #505040
+bignbright*color3: #B82743
+bignbright*color11: #AB0928
+bignbright*color4: #D90F37
+bignbright*color12: #B82743
+bignbright*color5: #54179E
+bignbright*color13: #512586
+bignbright*color6: #606050
+bignbright*color14: #505040
+bignbright*color7: #909080
+bignbright*color15: #808070
 
 ! Urxvt Scheme - tiny
 tiny*font: xft:DejaVu Sans Mono-8:style=Book
@@ -170,25 +180,3 @@ writing*color12: #606040
 writing*color13: #707050
 writing*color14: #808060
 writing*color15: #909070
-
-! urxvt - big
-big*internalBorder: 45
-big*font: xft:Droid Sans Mono-12:
-big*background: grey10
-big*foreground: #DED6CA
-big*color0: #5d5843
-big*color8: #6C6255
-big*color1: #76AEED
-big*color9: #75B6FF
-big*color2: #FFC469
-big*color10: #FFD28D
-big*color3: #CEA2EF
-big*color11: #D6B6EF
-big*color4: #e10e36
-big*color12: #fb365b
-big*color5: #B0D6FF
-big*color13: #D0F6FF
-big*color6: #FFD28D
-big*color14: #FFDDAA
-big*color7: #D1C8BC
-big*color15: #DED6CA
