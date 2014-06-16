@@ -27,7 +27,7 @@ XTerm*color7: whitesmoke
 XTerm*color15: ghostwhite
 
 ! Urxvt class
-URxvt*font: xft:DejaVu Sans Mono-8:style=Book
+URxvt*font: xft:DejaVu Sans Mono-9.5:style=Book
 URxvt*fading: 50
 URxvt*scrollBar: true
 URxvt*scrollstyle: plain
@@ -64,8 +64,6 @@ URxvt*color14: #FFFEC1
 URxvt*color15: #DED6CA
 
 ! Urxvt Scheme - coding
-codingold*font: xft:Inconsolata-10:style=Normal
-codingold*background: grey10
 codingold*foreground: #DED6CA
 codingold*color0: #4d4843
 codingold*color8: #5C5245
@@ -85,19 +83,20 @@ codingold*color7: #D1C8BC
 codingold*color15: #DED6CA
 
 ! Urxvt Scheme - coding
-coding*font: xft:Droid Sans Mono-10.5:style=Regular
+!coding*font: xft:Droid Sans Mono-10.5:style=Regular
 coding*internalBorder: 25
 
 ! urxvt - big
-big*font: xft:Droid Sans Mono-14
-big*internalBorder: 45
+big*font: xft:PT Mono-14:style=Regular
+big*internalBorder: 75
 
 ! urxvt - focus
-focus*font: xft:Droid Sans Mono-10.5:style=Regular
+!focus*font: xft:Droid Sans Mono-10.5:style=Regular
+focus*font: xft:DejaVu Sans Mono-10.5:style=Book
 focus*internalBorder: 119
 
 ! Urxvt Scheme - bright
-bright*font: xft:Droid Sans Mono-10.5:style=Regular
+!bright*font: xft:Droid Sans Mono-10.5:style=Regular
 bright*background: #fffaf5
 bright*foreground: #202010
 bright*color0: #b0b0a0
@@ -160,23 +159,24 @@ tiny*color7: #D1C8BC
 tiny*color15: #DED6CA
 
 ! urxvt - writing
-writing*internalBorder: 50
-writing*font: xft:Droid Sans Mono-12:
-writing*background: #fffaf5
-writing*foreground: #202000
-writing*color0: #303010
+writing*internalBorder: 70
+writing*font: xft:Bitter-14:style=Regular
+writing*letterSpace: -5
+writing*foreground: #fffaf5
+writing*background: #202000
+writing*color0: #808060
 writing*color1: #e10e36
-writing*color2: #404020
-writing*color3: #505030
-writing*color4: #606040
-writing*color5: #707050
+writing*color2: #808060
+writing*color3: #808060
+writing*color4: #808060
+writing*color5: #808060
 writing*color6: #808060
-writing*color7: #909070
-writing*color8: #303010
+writing*color7: #808060
+writing*color8: #b0b090
 writing*color9: #fb365b
-writing*color10: #404020
-writing*color11: #505030
-writing*color12: #606040
-writing*color13: #707050
-writing*color14: #808060
-writing*color15: #909070
+writing*color10: #b0b090
+writing*color11: #b0b090
+writing*color12: #b0b090
+writing*color13: #b0b090
+writing*color14: #b0b090
+writing*color15: #b0b090
