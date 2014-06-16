@@ -16,7 +16,7 @@ BUILD := _build
 
 build: vim mercurial misc-server
 
-build-desktop: build mutt xmonad termite misc-desktop
+build-desktop: build mutt xmonad termite weechat misc-desktop
 
 clean:
 	rm -rf $(BUILD)
@@ -99,3 +99,4 @@ $(BUILD)/.% :: %
 include mk/tools.mk
 include mk/vim.mk
 include mk/termite.mk
+include mk/weechat.mk
