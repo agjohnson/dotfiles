@@ -1,0 +1,6 @@
+setglobal hintchars=hjklasdfgyuiopqwertnmzxcvb
+highlight Hint font-family: monospace; font-size: 12px; background-color: orangered; padding: 2px; color: #fff;
+
+autocmd LocationChange .*           js modes.passAllKeys = false
+autocmd LocationChange trello\\.com js modes.passAllKeys = true
+autocmd LocationChange docs\\.google\\.com js modes.passAllKeys = true

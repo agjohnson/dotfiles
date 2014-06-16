@@ -3,7 +3,7 @@
 MERCURIAL_STYLES := dlog nlog sglog slog
 
 SERVER_FILES := cshrc tmux.conf gitconfig
-DESKTOP_FILES := conkyrc Xdefaults
+DESKTOP_FILES := conkyrc Xdefaults vimperatorrc
 
 GTK_ICONS_URL := "http://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.1.tar.gz"
 
