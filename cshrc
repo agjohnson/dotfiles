@@ -45,6 +45,7 @@ if ($?prompt) then
   bindkey -k down history-search-forward
   bindkey "^[j" history-search-backward
   bindkey "^[k" history-search-forward
+  bindkey "^r" i-search-back
   bindkey "^[h" backward-word
   bindkey "^[l" forward-word
   bindkey "\e[1~" beginning-of-line  # Home
@@ -58,7 +59,7 @@ if ($?prompt) then
   set c1 = "%{\033[1;33m%}"
   set c2 = "%{\033[1;30m%}"
   set c0 = "%{\033[0m%}"
-  set title = "%{\033]0;%m:%~\007%}"
+  set title = "%{\033]0;%~\007%}"
   
   # Warnings
   # Private (ssh-agent) warning
@@ -87,7 +88,7 @@ if ($?prompt) then
   if ($?warn_ssh) then
     set warn = "%{\033[41m%}${warn_ssh}${c0} ${warn}"
   endif
-  
+
   # Chroot
   set chroot = ""
   if ($?SCHROOT_SESSION_ID) then
