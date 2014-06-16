@@ -9,7 +9,7 @@ if version > 580
 endif
 let colors_name = "ohess"
 :hi Normal guifg=White guibg=grey15
-:hi Cursor guibg=khaki guifg=slategrey
+:hi Cursor guibg=khaki guifg=slategrey ctermbg=57 ctermfg=254
 :hi VertSplit guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Folded guibg=black guifg=grey40 ctermfg=grey ctermbg=darkgrey
 :hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
@@ -23,22 +23,23 @@ let colors_name = "ohess"
 :hi StatusLine guibg=#c2bfa5 guifg=black gui=none cterm=bold,reverse
 :hi StatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Title guifg=gold gui=bold cterm=bold ctermfg=yellow
-:hi Statement guifg=CornflowerBlue cterm=none ctermfg=darkblue
-:hi Visual gui=none guifg=khaki guibg=olivedrab cterm=reverse
+:hi Statement guifg=CornflowerBlue cterm=bold ctermfg=125
+:hi Visual gui=none guifg=khaki guibg=olivedrab ctermbg=241
 :hi WarningMsg guifg=salmon ctermfg=1
-:hi String guifg=SkyBlue ctermfg=darkcyan
-:hi Comment cterm=none ctermfg=0 guifg=grey40
+:hi String guifg=SkyBlue ctermfg=248
+:hi Comment cterm=italic ctermfg=242 guifg=grey40
 :hi Constant guifg=#ffa0a0 ctermfg=brown
-:hi Special guifg=darkkhaki ctermfg=brown
-:hi Identifier guifg=salmon cterm=none ctermfg=darkred
-:hi Include guifg=red ctermfg=red
-:hi PreProc guifg=red guibg=white ctermfg=red
-:hi Operator cterm=none guifg=Red ctermfg=red
-:hi Define guifg=gold gui=bold ctermfg=yellow
-:hi Type guifg=CornflowerBlue ctermfg=2
-:hi Function guifg=navajowhite ctermfg=brown
+:hi Special guifg=darkkhaki ctermfg=98
+:hi Identifier guifg=salmon cterm=none ctermfg=249
+:hi Include guifg=red ctermfg=110
+:hi PreProc guifg=red guibg=white ctermfg=98
+:hi Operator cterm=none guifg=Red ctermfg=124
+:hi MatchParen cterm=bold ctermbg=none ctermfg=111
+:hi Define guifg=gold gui=bold cterm=bold ctermfg=196
+:hi Type guifg=CornflowerBlue ctermfg=110
+:hi Function guifg=navajowhite cterm=bold ctermfg=4
 :hi Structure guifg=green ctermfg=green
-:hi LineNr guifg=grey50 ctermfg=3
+:hi LineNr guifg=grey50 ctermbg=238 ctermfg=242
 :hi Ignore guifg=grey40 cterm=bold ctermfg=7
 :hi Todo guifg=orangered guibg=yellow2
 :hi Directory ctermfg=darkcyan
@@ -63,3 +64,4 @@ let colors_name = "ohess"
 :hi perlStatementPackage ctermfg=blue
 :hi perlPackageDecl ctermfg=darkmagenta
 
+:hi clear SignColumn

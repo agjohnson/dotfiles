@@ -1,15 +1,27 @@
 # Vim rules
 
-VIM_SYNTAX := textile clojure taskpaper mkd
+BUILD ?= _build
+
+VIM_SYNTAX := textile taskpaper
 VIM_COLORS := ohess
 VIM_AUTOLOAD := pathogen
 
-VIM_BUNDLE_PL="https://github.com/Lokaltog/vim-powerline.git"
-VIM_BUNDLE_FUG="https://github.com/tpope/vim-fugitive.git"
+VIM_BUNDLES = \
+	https://github.com/Lokaltog/vim-powerline.git \
+	https://github.com/tpope/vim-fugitive.git \
+	https://github.com/klen/python-mode.git \
+	https://github.com/airblade/vim-gitgutter.git \
+	https://github.com/scrooloose/nerdtree.git \
+	https://github.com/saltstack/salt-vim.git \
+	https://github.com/scrooloose/syntastic.git \
+	https://github.com/timcharper/textile.vim.git \
+	https://github.com/groenewege/vim-less.git \
+	https://github.com/motemen/xslate-vim.git \
+	https://github.com/Townk/vim-autoclose.git \
+	https://github.com/guns/vim-clojure-static.git
 
 
-vim: vim-paths vim-files vim-bundle-powerline vim-bundle-fugitive \
-     vim-bundle-powerline-patch
+vim: vim-paths vim-files vim-bundles vim-bundle-powerline-patch
 
 vim-paths:
 	-[ -d $(BUILD)/.vim ] || mkdir -p $(BUILD)/.vim
@@ -29,17 +41,14 @@ $(BUILD)/.vimrc: vimrc
 $(BUILD)/.vim/%.vim :: vim/%.vim
 	cp $? $@
 
-vim-bundle-powerline:
-	-[ -d $(BUILD)/.vim/bundle/vim-powerline ] || (\
-		cd $(BUILD)/.vim/bundle; \
-		git clone $(VIM_BUNDLE_PL); \
-	);
-
-vim-bundle-fugitive:
-	-[ -d $(BUILD)/.vim/bundle/vim-fugitive ] || (\
-		cd $(BUILD)/.vim/bundle; \
-		git clone $(VIM_BUNDLE_FUG); \
-	);
+vim-bundles:
+	for url in $(VIM_BUNDLES); do { \
+		bundle=$$(echo $$url | sed -n 's/.*\/\([^\/]*\)\.git$$/\1/p'); \
+		[ -d $(BUILD)/.vim/bundle/$$bundle ] || ( \
+			cd $(BUILD)/.vim/bundle; \
+			git clone $$url; \
+		); \
+	}; done;
 
 vim-bundle-powerline-patch: $(BUILD)/.vim/bundle/vim-powerline/autoload/Powerline/Colorschemes/ohess.vim
 

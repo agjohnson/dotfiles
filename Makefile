@@ -23,7 +23,7 @@ clean:
 
 install:
 ifdef DEBUG
-	diff -urd $(BUILD)/ ~/
+	diff -urd -x .git -x bundle $(BUILD)/ ~/ | grep -v '^Only in'
 else
 	rsync -crai $(BUILD)/ ~/
 endif
