@@ -1,0 +1,70 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = DejaVu Sans Mono 10
+scrollback_lines = 1000
+search_wrap = true
+term = xterm-termite
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+browser = firefox-nightly
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+
+# set size hints for the window
+#size_hints = false
+
+[colors]
+
+background = #fffaf5
+foreground = #202010
+#foreground_bold = #ffffff
+#foreground_dim = #888888
+cursor = #5f5f55
+highlight = #2f2f2f
+
+color0 = #b0b0a0
+color8 = #a0a090
+color1 = #138A81
+color9 = #20736D
+color2 = #606050
+color10 = #505040
+color3 = #B82743
+color11 = #AB0928
+color4 = #D90F37
+color12 = #B82743
+color5 = #54179E
+color13 = #512586
+color6 = #606050
+color14 = #505040
+color7 = #909080
+color15 = #808070
+
+[hints]
+font = DejaVu Serif 10
+#foreground = #dcdccc
+#background = #3f3f3f
+padding = 2
+border = #3f3f3f
+#border_width = 0.5
+roundness = 2.0
+
+# vim: ft=dosini cms=#%s

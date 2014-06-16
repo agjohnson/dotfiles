@@ -12,18 +12,21 @@ BUILD := _build
 
 .PHONY: build build-desktop install vim mutt xmonad \
 	gtk gtk-themes misc-server misc-desktop mercurial mercurial-paths \
-	mercurial-files
+	mercurial-files termite
 
 build: vim mercurial misc-server
 
-build-desktop: build mutt xmonad misc-desktop
+build-desktop: build mutt xmonad termite misc-desktop
 
 clean:
 	rm -rf $(BUILD)
 
 install:
+ifdef DEBUG
+	diff -urd $(BUILD)/ ~/
+else
 	rsync -crai $(BUILD)/ ~/
-
+endif
 
 # Mercurial
 
@@ -81,7 +84,6 @@ $(BUILD)/.gtkrc-2.0: gtkrc
 gtk-themes:
 	contrib/install-faenza
 
-
 # Misc
 
 server_files_base := $(foreach file,$(SERVER_FILES),$(BUILD)/.$(file))
@@ -95,3 +97,4 @@ $(BUILD)/.% :: %
 
 include mk/tools.mk
 include mk/vim.mk
+include mk/termite.mk
