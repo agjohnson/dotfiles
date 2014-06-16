@@ -1,0 +1,52 @@
+#!/bin/sh
+
+. ~/bin/startup-functions.sh
+
+if xrandr | egrep '^HDMI[0-9] connected' 1>/dev/null; then
+    echo "Setting awesome mode"
+    xrandr \
+      --output eDP1 \
+      --mode 1440x900 \
+      --rotate normal \
+      --primary \
+      --output HDMI1 \
+      --mode 1920x1080 \
+      --rotate normal \
+      --right-of eDP1
+    setxkbmap \
+        -option \
+        -option caps:super
+    killall trayer
+    start_tray
+elif xrandr | egrep '^DP[0-9] connected' 1>/dev/null; then
+    echo "Setting desktop mode"
+    xrandr \
+      --output DP1 \
+      --mode 1920x1080 \
+      --rotate normal \
+      --primary \
+      --output eDP1 \
+      --mode 1440x900 \
+      --right-of DP1 \
+      --rotate normal
+    setxkbmap \
+        -option \
+        -option caps:super
+    killall trayer
+    start_tray 1440
+else
+    echo "Setting laptop mode"
+    xrandr \
+      --output eDP1 \
+      --mode 1440x900 \
+      --primary \
+      --output DP1 \
+      --off
+    setxkbmap \
+        -option \
+        -option caps:super
+    killall trayer
+    start_tray
+fi
+
+feh --bg-fill ~/background.jpg

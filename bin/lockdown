@@ -1,0 +1,20 @@
+#!/bin/sh
+
+function prompt () {
+    echo -ne "Data is \e[1;32m$1\e[0m$2"
+}
+
+if grep -E "^encfs" /proc/mounts &> /dev/null; then
+    prompt "OPEN" ", lockdown? "
+    read act
+    [ "$act" == "y" ] && 
+      killall -HUP encfs &&
+        prompt "LOCKED DOWN" "\n"
+else
+    prompt "LOCKED DOWN" ", open? "
+    read act
+    [ "$act" == "y" ] && 
+      encfs ~/.encrypted ~/secure &&
+        prompt "OPEN" "\n"
+fi
+

@@ -6,7 +6,11 @@ GIT_MELD_URL="https://raw.github.com/wmanley/git-meld/master/git-meld.pl"
 LOCALENV=~/.env
 CPANM=$(LOCALENV)/bin/cpanm
 
-install-tools: ~/.env/bin/ack ~/.env/bin/carton ~/.env/bin/rbenv ~/.env/bin/git-meld.pl ~/bin/startup-functions.sh
+SCRIPTS = startup-functions.sh lockdown dock
+SCRIPTS_SRC = $(foreach script,$(SCRIPTS),bin/$(script))
+SCRIPTS_BUILD = $(foreach path,$(SCRIPTS_SRC),$(BUILD)/$(path))
+
+install-tools: ~/.env/bin/ack ~/.env/bin/carton ~/.env/bin/rbenv ~/.env/bin/git-meld.pl $(BUILD)/bin/dock $(BUILD)/bin/lockdown
 
 # Perl tools
 $(LOCALENV)/bin/ack: $(CPANM) $(LOCALENV)/bin/localenv
@@ -41,6 +45,6 @@ $(LOCALENV)/bin/rbenv:
 			pax -z -r -v -s '/^[^\/]*\///'
 
 # Scripts
-$(BUILD)/bin/startup-functions.sh: bin/startup-functions.sh
+$(BUILD)/bin/%: bin/%
 	[ -d $(BUILD)/bin ] || mkdir $(BUILD)/bin
 	cp $? $@
