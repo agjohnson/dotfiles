@@ -6,7 +6,7 @@ GIT_MELD_URL="https://raw.github.com/wmanley/git-meld/master/git-meld.pl"
 LOCALENV=~/.env
 CPANM=$(LOCALENV)/bin/cpanm
 
-install-tools: ~/.env/bin/ack ~/.env/bin/carton ~/.env/bin/rbenv ~/.env/bin/git-meld.pl
+install-tools: ~/.env/bin/ack ~/.env/bin/carton ~/.env/bin/rbenv ~/.env/bin/git-meld.pl ~/bin/startup-functions.sh
 
 # Perl tools
 $(LOCALENV)/bin/ack: $(CPANM) $(LOCALENV)/bin/localenv
@@ -40,3 +40,7 @@ $(LOCALENV)/bin/rbenv:
 		curl -Lko - 'https://github.com/sstephenson/ruby-build/tarball/master' | \
 			pax -z -r -v -s '/^[^\/]*\///'
 
+# Scripts
+$(BUILD)/bin/startup-functions.sh: bin/startup-functions.sh
+	[ -d $(BUILD)/bin ] || mkdir $(BUILD)/bin
+	cp $? $@

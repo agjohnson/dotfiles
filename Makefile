@@ -59,7 +59,8 @@ $(BUILD)/.mutt/%.muttrc: mutt/%.muttrc
 
 # Xmonad
 
-xmonad: $(BUILD)/.xmonad/xmonad.hs $(BUILD)/.xmobarrc $(BUILD)/.xinitrc
+xmonad: $(BUILD)/.xmonad/xmonad.hs $(BUILD)/.xmobarrc $(BUILD)/.xinitrc \
+	$(BUILD)/bin/startup-functions.sh
 
 $(BUILD)/.xmonad/xmonad.hs: xmonad/xmonad.hs
 	-[ -d $(BUILD)/.xmonad ] || mkdir $(BUILD)/.xmonad
