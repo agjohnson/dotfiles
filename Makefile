@@ -88,3 +88,4 @@ include mk/gtk.mk
 include mk/vim.mk
 include mk/termite.mk
 include mk/weechat.mk
+include mk/redshift.mk
