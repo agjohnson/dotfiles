@@ -1,0 +1,21 @@
+ # Shiki Nouveau
+
+pkgname=shiki-nouveau
+pkgver=2012.11.01
+pkgrel=2
+pkgdesc="Shiki-Colors Gtk2.0/Gtk3.0/Metacity/Mutter/Cinnamon/Gnome-Shell theme."
+url="http://gnome-look.org/CONTENT/content-files/153821-Shiki-Nouveau-Fall-Colors.tar.bz2"
+license=('LGPL')
+arch=('any')
+depends=('gtk-engine-murrine' 'gtk-engine-unico')
+optdepends=('gnome-shell-extension-user-theme: User Theme extension for GNOME Shell'
+            'gnome-tweak-tool: A tool to customize advanced GNOME 3 options.')
+conflicts=(gtk-theme-shiki-colors)
+source=("http://gnome-look.org/CONTENT/content-files/153821-Shiki-Nouveau-Fall-Colors.tar.bz2")
+md5sums=('f9a95dc0015da3f54b2a00e478f26627')
+
+package() {
+    mkdir -p ${pkgdir}/usr/share/themes/
+    cp -R ${srcdir}/Shiki-Nouveau-Fall-Colors/* ${pkgdir}/usr/share/themes/
+    chmod -R 755 ${pkgdir}/usr/share/themes/
+}
