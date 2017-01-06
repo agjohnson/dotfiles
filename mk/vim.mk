@@ -7,18 +7,23 @@ VIM_COLORS := ohess
 VIM_AUTOLOAD := pathogen
 
 VIM_BUNDLES = \
-	https://github.com/Lokaltog/vim-powerline.git \
-	https://github.com/tpope/vim-fugitive.git \
-	https://github.com/klen/python-mode.git \
-	https://github.com/airblade/vim-gitgutter.git \
+	https://github.com/mileszs/ack.vim.git \
+	https://github.com/kien/ctrlp.vim.git \
 	https://github.com/scrooloose/nerdtree.git \
+	https://github.com/klen/python-mode.git \
 	https://github.com/saltstack/salt-vim.git \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/timcharper/textile.vim.git \
-	https://github.com/groenewege/vim-less.git \
-	https://github.com/motemen/xslate-vim.git \
 	https://github.com/Townk/vim-autoclose.git \
-	https://github.com/guns/vim-clojure-static.git
+	https://github.com/guns/vim-clojure-static.git \
+	https://github.com/kana/vim-fakeclip.git \
+	https://github.com/tpope/vim-fugitive.git \
+	https://github.com/airblade/vim-gitgutter.git \
+	https://github.com/hylang/vim-hy.git \
+	https://github.com/pangloss/vim-javascript.git \
+	https://github.com/ledger/vim-ledger.git \
+	https://github.com/groenewege/vim-less.git \
+	https://github.com/Lokaltog/vim-powerline.git
 
 
 vim: vim-paths vim-files vim-bundles vim-bundle-powerline-patch
