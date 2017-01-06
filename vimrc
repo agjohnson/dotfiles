@@ -80,7 +80,11 @@ autocmd BufEnter *.pde setfiletype arduino
 autocmd BufEnter *.ino setfiletype arduino
 autocmd BufEnter *.tpl setfiletype xslate
 
-let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_python_checkers = ['prospector']
+function PythonStrict()
+    let g:syntastic_python_prospector_args = '--profile prospector-high'
+endfunction
+"let g:syntastic_python_prospector_args = '--profile prospector'
 let g:syntastic_perl_checkers = ['perlcritic']
 let g:syntastic_perl_perlcritic_args = '--harsh'
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
@@ -99,12 +103,26 @@ let g:pad_position = { "list" : "bottom", "pads": "right" }
 
 "let g:flake8_cmd = '/home/anthony/.env/bin/flake8'
 
+let g:pymode_doc = 0
 let g:pymode_folding = 0
-let g:pymode_rope = 0
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_lint = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_write = 0
 let g:pymode_lint_unmodified = 0
+let g:python_host_prog = '/Users/anthony/.pyenv/versions/2.7.8/envs/env/bin/python'
+let g:python3_host_prog = '/Users/anthony/.pyenv/versions/3.5.1/envs/env-3.5/bin/python3'
+set completeopt=menu
 
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\.egg$']
+let g:NERDTreeChDirMode       = 2
+" Clipboard
+let g:fakeclip_provide_clipboard_key_mappings = 1
+
+" Ctrlp
+let g:ctrlp_custom_ignore = { 'file': '\v\.(pyc|so|swp|tar|tar.gz|tgz)$', 'dir': '\v[\/](\.git|\.hg|env)$' }
+let g:ctrlp_working_path_mode = 'rw'
