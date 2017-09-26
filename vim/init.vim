@@ -92,7 +92,8 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
-map <F7> :SyntasticCheck<CR>
+map <F7> :call SyntasticCheck()<CR>
+map <C-c>7 :call SyntasticCheck()<CR>
 
 let g:pad_dir = '/home/anthony/secure/docs/notes'
 let g:pad_default_format = 'mkd'
@@ -113,8 +114,8 @@ let g:pymode_lint = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_write = 0
 let g:pymode_lint_unmodified = 0
-let g:python_host_prog = '/Users/anthony/.pyenv/versions/2.7.8/envs/env/bin/python'
-let g:python3_host_prog = '/Users/anthony/.pyenv/versions/3.5.1/envs/env-3.5/bin/python3'
+"let g:python_host_prog = '/Users/anthony/.pyenv/versions/2.7.8/envs/env/bin/python'
+"let g:python3_host_prog = '/Users/anthony/.pyenv/versions/3.5.1/envs/env-3.5/bin/python3'
 set completeopt=menu
 
 map <Leader>n :NERDTreeToggle<CR>
