@@ -8,6 +8,7 @@ set os = `uname -s`
 if ($os == "Linux") @ is_linux=1
 if ($os == "NetBSD") @ is_netbsd=1
 if ($os == "FreeBSD") @ is_freebsd=1
+if ($os == "Darwin") @ is_freebsd=1
 
 # Aliases
 alias h history 25
@@ -19,6 +20,7 @@ alias la ls -a
 alias lf ls -FA
 alias ll ls -lA
 alias su su -m
+alias vim nvim
 
 # Environmental Variables
 setenv EDITOR vim
@@ -97,7 +99,7 @@ if ($?prompt) then
 
   switch ($TERM)
     case "xterm*":
-    case "screen":
+    case "screen*":
       set prompt = "%{\007%}${title}${chroot}${warn}${c2}%T %m %~${c0} ${c1}%#${c0} "
       breaksw
     default:
@@ -106,8 +108,30 @@ if ($?prompt) then
   endsw
 endif
 
-# Include local
+# Paths
 cd
+
+setenv PATH ~/.local/bin:/usr/local/bin:$PATH
+
+# Python paths
+if (-d ".pyenv") then
+  setenv PYENV_VIRTUALENV_INIT 1
+  setenv PYENV_ROOT "${HOME}/.pyenv"
+  setenv PATH "${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}"
+  pyenv rehash
+endif
+
+# Ruby
+if (-d ".rbenv") then
+  setenv RBENV_ROOT ~/.rbenv
+  setenv PATH "${RBENV_ROOT}/shims:${RBENV_ROOT}/bin:${PATH}"
+  rbenv rehash
+endif
+
+# Node
+setenv PATH "./node_modules/.bin:${PATH}"
+
+# Include local
 if (-f ".cshrc.local") then
   source .cshrc.local
 endif
